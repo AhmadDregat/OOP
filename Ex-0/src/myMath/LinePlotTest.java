@@ -30,7 +30,7 @@ public class LinePlotTest extends JFrame {
 		XYPlot plot = new XYPlot(data);
 		getContentPane().add(new InteractivePanel(plot));
 		LineRenderer lines = new DefaultLineRenderer2D();
-		plot.setLineRenderers(data, lines);
+		plot.setLineRenderers(data,lines);
 		Color color = new Color(0.0f, 0.3f, 1.0f);
 		plot.getPointRenderers(data).get(0).setColor(color);
 		plot.getLineRenderers(data).get(0).setColor(color);
