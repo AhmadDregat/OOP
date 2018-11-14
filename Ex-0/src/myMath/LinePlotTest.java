@@ -10,6 +10,7 @@ import de.erichseifert.gral.ui.InteractivePanel;
 
 	
 public class LinePlotTest extends JFrame {
+	
 	public LinePlotTest() {
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
