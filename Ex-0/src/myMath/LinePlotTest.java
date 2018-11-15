@@ -19,9 +19,9 @@ public class LinePlotTest extends JFrame {
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(600, 400);
-		Polynom p1=new Polynom();
-		p1.add(new Monom(1,2));
-		p1.add(new Monom(5,0));
+		Polynom p1=new Polynom("2x^2+5");
+//		p1.add(new Monom(1,2));
+//		p1.add(new Monom(5,0));
 		DataTable data = new DataTable(Double.class, Double.class);
 		for (double x = -5.0; x <= 5.0; x+=0.25) {
 			double y = p1.f(x);

@@ -45,34 +45,24 @@ public class Polynom implements Polynom_able{
 	 * @param s
 	 */
 	public Polynom(String s ) {
-		polynom = new ArrayList<Monom>() ;
-		Polynom th =init_from_string(s);
-		Iterator<Monom> iter = th.iteretor();
-		while(iter.hasNext()) {
-			this.add(iter.next());
+		polynom = new ArrayList<Monom>();
+		s=s.toLowerCase();
+		s=s.replaceAll(" ", "");
+		s=s.replaceAll("-", "+-");
+		String[] new_string = s.split("\\+");
+		if (new_string.length>1 && new_string[0].isEmpty())
+		for (int i = 1; i < new_string.length; i++)
+		add(new Monom(new_string[i]));
+		else
+		{
+		for (int i = 0; i < new_string.length; i++)
+		add(new Monom(new_string[i]));
 		}
-	}
-	/**
-	 * function convert to integer 
-	 * @param s
-	 * @return Polynom
-	 */
-	private static Polynom init_from_string(String s) {
-		if (s==null) {
-			throw new RuntimeException("wrong input for Monom Constractor ");
+		Monom_Comperator ans = new Monom_Comperator();
+		this.polynom.sort(ans);
 		}
-		String []  par=s.split(" ");
-		Polynom a =new Polynom();
-		for (int i=0;i<par.length;i++) {
-			String t=par[i];
-			if (!t.contains("+")||t.length()>1) {
-				Monom v =new Monom(t);
-				a.add(v);
-			}
-		}
-		return a;
 
-	}
+
 	/**
 	 * This function computes the value of this polynom at f(x), as a sum of monoms.
 	 * @param x this Strig  is a variable for polynom
