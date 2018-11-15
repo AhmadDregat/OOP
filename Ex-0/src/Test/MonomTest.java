@@ -28,8 +28,8 @@ class MonomTest {
 		if(!m1.equals(m2)) {
 			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
 		}
-	}
-	@Test
+	 }  
+	 @Test
 	void testMonomMonom() {
 		double a = Math.random()*1000 ;
 		int _pow = (int)Math.random()*1000 ;
