@@ -51,16 +51,16 @@ public class Polynom implements Polynom_able{
 		s=s.replaceAll("-", "+-");
 		String[] new_string = s.split("\\+");
 		if (new_string.length>1 && new_string[0].isEmpty())
-		for (int i = 1; i < new_string.length; i++)
-		add(new Monom(new_string[i]));
+			for (int i = 1; i < new_string.length; i++)
+				add(new Monom(new_string[i]));
 		else
 		{
-		for (int i = 0; i < new_string.length; i++)
-		add(new Monom(new_string[i]));
+			for (int i = 0; i < new_string.length; i++)
+				add(new Monom(new_string[i]));
 		}
 		Monom_Comperator ans = new Monom_Comperator();
 		this.polynom.sort(ans);
-		}
+	}
 
 
 	/**
@@ -90,8 +90,6 @@ public class Polynom implements Polynom_able{
 			Monom mo =itr.next();
 			add(mo);	
 		}
-
-
 	}
 	/**
 	 * Add m1 to this Polynom
@@ -107,7 +105,6 @@ public class Polynom implements Polynom_able{
 			if (m.get_power()==m1.get_power()) {
 				m.add(m1);
 				found =false ;
-
 			}
 		}
 
@@ -116,7 +113,6 @@ public class Polynom implements Polynom_able{
 
 			this.polynom.sort(COMP);
 		}
-
 	}
 	/**
 	 * Subtract p1 from this Polynom
@@ -273,29 +269,27 @@ public class Polynom implements Polynom_able{
 		}
 		return nP;
 	}
-/**
- * this method return the area in domain 
- * @param x0 = this the start in the domain 
- * @param x1= this the end in the domain 
- * @param eps= אחוז קירוב  
- * 
- * 
- * 
- */
+	/**
+	 * this method return the area in domain 
+	 * @param x0 = this the start in the domain 
+	 * @param x1= this the end in the domain 
+	 * @param eps= אחוז קירוב  
+	 * 
+	 * 
+	 * 
+	 */
 	@Override
 	public double area(double x0, double x1, double eps) {
 		// TODO Auto-generated method stub
 
-		
+
 		double S=0;
 
 		while(x0<=x1) {
 			S+=(this.f(x0)*eps);
 			x0+=eps;
 		}
-
 		return S;
-
 	}
 	/**
 	 * this functoin help us Moving in the Polynom from Monom to other Monom .
@@ -308,7 +302,4 @@ public class Polynom implements Polynom_able{
 	// ************** Private *******************
 	private ArrayList<Monom> polynom;
 	private static final Monom_Comperator COMP = new Monom_Comperator();
-
-
-
 }
