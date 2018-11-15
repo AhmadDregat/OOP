@@ -8,7 +8,7 @@ import myMath.Monom;
 
 class MonomTest {
 
-	@Test
+	 @Test
 	void testMonomDoubleInt() {
 		double a = Math.random()*1000 ;
 		int _pow = (int)Math.random()*1000 ;
@@ -16,7 +16,7 @@ class MonomTest {
 		if(m.get_coefficient() != a || m.get_power() != _pow)
 			fail("JUnit fail: Somthing is wrong with the Monom construction or is_valid method");
 	}
-	@Test
+	 @Test
 	public void testEqualsMonom() {
 		Monom m1 = new Monom(1.22,0);
 		Monom m2 = new Monom(m1);
@@ -29,15 +29,15 @@ class MonomTest {
 			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
 		}
 	 }  
-	 @Test
+	  @Test
 	void testMonomMonom() {
 		double a = Math.random()*1000 ;
 		int _pow = (int)Math.random()*1000 ;
 		Monom m1 = new Monom(a , _pow);
 		if(m1.get_coefficient() != a || m1.get_power() != _pow)
 			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
-	}
-	@Test
+	 }
+	 @Test
 	public void testGet_power() {
 		int power = 11;
 		Monom m1 = new Monom(1.22,power);
@@ -47,7 +47,7 @@ class MonomTest {
 	}
 
 	
-	@Test
+	 @Test
 	void testMonomString() {
 		double a = Math.random()*1000 ;
 		int _pow = (int)Math.random()*1000 ;
@@ -57,7 +57,7 @@ class MonomTest {
 			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
 	}
 
-	@Test
+	  @Test
 	void testAdd() {
 		double a1 = Math.random()*1000 ;
 		double a2 = Math.random()*1000 ;
