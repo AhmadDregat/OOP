@@ -14,18 +14,39 @@ class MonomTest {
 		int _pow = (int)Math.random()*1000 ;
 		Monom m = new Monom(a , _pow);
 		if(m.get_coefficient() != a || m.get_power() != _pow)
-			fail("Eror , uncorect construction");
+			fail("JUnit fail: Somthing is wrong with the Monom construction or is_valid method");
 	}
-
+	@Test
+	public void testEqualsMonom() {
+		Monom m1 = new Monom(1.22,0);
+		Monom m2 = new Monom(m1);
+		if(!m1.equals(m2)) {
+			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
+		}
+		m1 = new Monom(0,2);
+		m2 = new Monom(m1);
+		if(!m1.equals(m2)) {
+			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
+		}
+	}
 	@Test
 	void testMonomMonom() {
 		double a = Math.random()*1000 ;
 		int _pow = (int)Math.random()*1000 ;
 		Monom m1 = new Monom(a , _pow);
 		if(m1.get_coefficient() != a || m1.get_power() != _pow)
-			fail("Eror , uncorrect construction");
+			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
+	}
+	@Test
+	public void testGet_power() {
+		int power = 11;
+		Monom m1 = new Monom(1.22,power);
+		if(power!= m1.get_power()) {
+			fail("JUnit fail: Somthing is wrong with the get_power() method");
+		}
 	}
 
+	
 	@Test
 	void testMonomString() {
 		double a = Math.random()*1000 ;
@@ -33,7 +54,7 @@ class MonomTest {
 		String _str = "" + a + "x^" + _pow ;
 		Monom m = new Monom(_str);
 		if(m.get_coefficient() != a || m.get_power() != _pow)
-			fail("Eror , uncorrect construction");
+			fail("JUnit fail: Somthing is wrong with the Monom copy construction or equals method");
 	}
 
 	@Test

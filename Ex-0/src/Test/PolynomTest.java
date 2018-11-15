@@ -20,14 +20,14 @@ class PolynomTest {
 
 	@Test
 	void testPolynomString() {
-		Polynom p=new Polynom();		
-		Polynom p1=new Polynom();
-		p.add(new Monom(3,8));
-		p.add(new Monom(5,3));
-		p1.add(new Monom(3,8));
-		p1.add(new Monom(5,3));
+		Polynom p=new Polynom("3x^8+5x^3");		
+		Polynom p1=new Polynom("3x^8+5x^3");
+//		p.add(new Monom(3,8));
+//		p.add(new Monom(5,3));
+//		p1.add(new Monom(3,8));
+//		p1.add(new Monom(5,3));
 		if(!p.equals(p1))
-			fail("Eror , uncorrect constractor");
+			fail("ERR - related to the Polynom(String) init: the polynoms should be the same (equals)");
 	}
 
 
@@ -63,7 +63,7 @@ class PolynomTest {
 		s.add(new Monom(12, 0));
 
 		if(!s.equals(p1))
-			fail("Not yet implemented");
+			fail("ERR - the polynoms should be the same");
 	}
 
 	@Test
